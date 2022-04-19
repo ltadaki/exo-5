@@ -1,24 +1,22 @@
-basic.showIcon(IconNames.Heart)
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        basic.showLeds(`
-            . # # . .
-            # . . # .
-            # # # # .
-            # . . # .
-            # . . # .
-            `)
-    }
-    if (input.buttonIsPressed(Button.B)) {
-        basic.showLeds(`
-            # # # . .
-            # . . # .
-            # # # . .
-            # . . # .
-            # # # . .
-            `)
-    }
-    if (input.buttonIsPressed(Button.AB)) {
-        basic.clearScreen()
-    }
+input.onButtonPressed(Button.A, function () {
+    basic.showLeds(`
+        . # # . .
+        # . . # .
+        # # # # .
+        # . . # .
+        # . . # .
+        `)
 })
+input.onButtonPressed(Button.AB, function () {
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showLeds(`
+        # # # . .
+        # . . # .
+        # # # . .
+        # . . # .
+        # # # . .
+        `)
+})
+basic.showIcon(IconNames.Heart)
